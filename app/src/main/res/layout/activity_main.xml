@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="org.pondar.pacmankotlin.MainActivity" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/move_right"
+            android:id="@+id/moveRight"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/move_left"
+            android:layout_weight="1"
+            android:id="@+id/moveLeft"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/move_up"
+            android:id="@+id/moveUp"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/move_down"
+            android:id="@+id/moveDown"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/conpau"
+            android:id="@+id/playpause"/>
+
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/pointsView"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/points" />
+
+        <TextView
+            android:id="@+id/secsView"
+            android:layout_alignParentEnd="true"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/secs" />
+
+
+    <org.pondar.pacmankotlin.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </org.pondar.pacmankotlin.GameView>
+
+</LinearLayout>
