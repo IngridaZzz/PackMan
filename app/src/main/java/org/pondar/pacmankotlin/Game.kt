@@ -8,12 +8,6 @@ import android.os.Looper
 import android.widget.TextView
 import java.util.ArrayList
 
-
-/**
- *
- * This class should contain all your game logic
- */
-
 class Game(private var context: Context, private var pointsView: TextView, private var secsView: TextView) {
 
     var points: Int = 0
@@ -23,6 +17,8 @@ class Game(private var context: Context, private var pointsView: TextView, priva
     var pacy: Int = 0
 
     var paused = false
+
+    var difficulty: Int = 0
 
     val mainHandler = Handler(Looper.getMainLooper())
 
@@ -64,14 +60,12 @@ class Game(private var context: Context, private var pointsView: TextView, priva
     }
 
     fun initializeEnemies() {
-        var x = 0
-        while (x < 2) {
+
             var enemy = Enemy(context)
-            enemy.enemyX = (0..1000).random()
-            enemy.enemyY = (0..1000).random()
+            enemy.enemyX = w - 200
+            enemy.enemyY = 450
             enemies.add(enemy)
-            x++
-        }
+
         //DO Stuff to initialize the array list with some coins.
         enemiesInitialized = true
     }
@@ -148,7 +142,7 @@ class Game(private var context: Context, private var pointsView: TextView, priva
 
     fun moveEnemies() {
         for (enemy in enemies) {
-            val movement = 100
+            val movement = 50 + difficulty
             var randomMovement = (1..4).random()
             when(randomMovement) {
                 1 ->

@@ -9,5 +9,5 @@ class Enemy(context: Context) {
     var enemyY: Int = 0
 
     var image: Bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.enemy)
-    var enemyBitmap: Bitmap = Bitmap.createScaledBitmap(image, 80, 80, false)
+    var enemyBitmap: Bitmap = Bitmap.createScaledBitmap(image, 100, 100, false)
 }

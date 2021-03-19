@@ -94,6 +94,7 @@ class GameView : View {
                 Toast.makeText(context, "Game Over", Toast.LENGTH_LONG).show()
             }
             if(game.points > 9)
+                game.difficulty += 20
                 game.newGame()
                 Toast.makeText(context, "You won!", Toast.LENGTH_LONG).show()
         }
